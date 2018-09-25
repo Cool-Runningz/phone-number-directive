@@ -1,0 +1,26 @@
+<head>
+ <!-- Bootstrap 3 - Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Bootstrap 3 - jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap 3 - Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<form name="phoneForm">
+<div>
+    <select ng-model="$ctrl.countryCode"
+            ng-options="c.code as c.name for c in $ctrl.countries | orderBy: c.name">
+        </select>
+    <input type="tel" id="phone" name="phone" maxlength="12"
+                ng-model="$ctrl.phoneNumber" 
+                country-code="$ctrl.countryCode"
+                phone-formatter-directive>
+    <span class="error" ng-show="phoneForm.phone.$error.invalidPhoneForRegion">
+        Invalid phone number based on country code
+    </span>
+    <span class="error" ng-show="phoneForm.phone.$error.invalidPhoneLength">
+        Invalid amount of digits entered
+    </span>
+</div>
+</form>
+

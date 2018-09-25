@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Phone Formatter - AngularJS</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.component.js"></script>
+    <script src="scripts/libphonenumber.js"></script>
+    <script src="phone-formatter.directive.js"></script>
+</head>
+<body>
+
+<div ng-app="phoneFormatterApp" class="container-fluid">
+    <div>
+        <p>Phone number formatter built in AngularJS that utilizes Google phone library. 
+            The phone number takes in a country code from the dropdown and formats the phone number onBlur. 
+        </p>
+    </div>
+    <phone-formatter></phone-formatter>
+</div>
+</body>
+</html>
